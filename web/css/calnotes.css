@@ -1,0 +1,29 @@
+#calnotes-info-pane
+{
+	position: fixed;
+	box-shadow: -4px 0px 4px 0px rgba(0,0,0,.2);
+	border-style: solid;
+	border-width: 0px 0px 0px 1px;
+	right: 0px;
+	height: 100%;
+	min-width: 300px;
+	width: 20%;
+}
+
+#calnotes-filter-pane
+{
+	position: fixed;
+	background: #ffc427 url('../img/logo.png') left no-repeat;
+	box-shadow: 0 4px 4px 0px rgba(0,0,0,.2);
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	left: 0px;
+	height: 100px;
+}
+
+.calnotes-difficulty-slider
+{
+	display: inline-block;
+	background: -webkit-linear-gradient(right , rgb(230,51,51) 22%, rgb(238,245,24) 50%, rgb(47,237,60) 87%);
+	width: 100px;
+}
