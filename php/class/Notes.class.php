@@ -2,9 +2,9 @@
 
 class Notes
 {
-	static function generateTree ($options = array())
+	static function generateTree ($options = NULL)
 	{
-		if ($options == array())
+		if ($options == NULL)
 		{
 			// Generate generic tree	
 		}
