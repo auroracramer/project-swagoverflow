@@ -6,7 +6,7 @@ class Notes
 	{
 		if ($options == NULL)
 		{
-			// Generate generic tree	
+			// Generate generic tree
 		}
 		else
 		{
@@ -21,12 +21,13 @@ class Notes
 		}
 	}
 	
-	static function queryToArray($query)
+	static function queryToArray($result)
 	{
-		if ($query && mysql_num_rows($query) > 0)
+            
+		if ($result && mysql_num_rows($result) > 0)
 		{
 			$result = array();
-			while ($array = mysql_fetch_array($query)) $result[] = new Note($array);
+			while ($array = mysql_fetch_array($result)) $result[] = new Note($array);
 			return $result;
 		}
 	}
