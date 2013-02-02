@@ -6,6 +6,11 @@ class Node
 	{
 		
 	}
+	
+	function addChild($e)
+	{
+		
+	}
 }
 
 ?>
