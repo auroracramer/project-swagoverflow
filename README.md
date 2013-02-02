@@ -1,4 +1,0 @@
-project-swagoverflow
-====================
-
-Collaborative study
