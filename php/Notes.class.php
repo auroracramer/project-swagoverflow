@@ -20,6 +20,16 @@ class Notes
 			// tags (this will be done via PHP)
 		}
 	}
+	
+	static function queryToArray($query)
+	{
+		if ($query && mysql_num_rows($query) > 0)
+		{
+			$result = array();
+			while ($array = mysql_fetch_array($query)) $result[] = new Note($array);
+			return $result;
+		}
+	}
 }
 
 ?>
