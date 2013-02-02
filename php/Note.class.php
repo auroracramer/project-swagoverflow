@@ -13,7 +13,7 @@ class Note
 			$this->nclass = $college_or_fetch["class"];
 			$this->subject = $college_or_fetch["subject"];
 			$this->difficulty = $college_or_fetch["difficulty"];
-			$this->tags = explode(",", $college_or_fetch["tags"]);
+			$this->tags = explode(" ", $college_or_fetch["tags"]);
 			$this->title = $college_or_fetch["title"];
 			$this->body = $college_or_fetch["body"];
 		}
@@ -25,7 +25,7 @@ class Note
 			$this->nclass = $nclass;
 			$this->subject = $subject;
 			$this->difficulty = $difficulty;
-			$this->tags = explode(",", $tags);
+			$this->tags = explode(" ", $tags);
 			$this->title = $title;
 			$this->body = $body;
 		}
