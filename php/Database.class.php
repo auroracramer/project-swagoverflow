@@ -16,7 +16,7 @@ class Database
 		$connected =  mysql_select_db("proje108_quiggle", $mysql_connection);
 		
 		if(!$connected) echo "Connection Fail: ".mysql_error()."<br />";
-		else Debug::write("Successfully connected to database");
+//		else Debug::write("Successfully connected to database");
 		
 		return $mysql_connection;
 	}
