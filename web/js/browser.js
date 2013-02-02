@@ -11,10 +11,14 @@ var force = d3.layout.force()
     .gravity(.05)
     .size([width, height]);
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#calnotes-viewport").append("svg")
     .attr("viewBox", "0 0 " + width + " " + height)
 
-d3.json("miserables.json", function(error, graph) {
+$.ajax({
+      url: "www.projectivevoid.com/calnotes/api/?cmd=generate_tree";   
+})
+  .done(function(graph) {
+  graph = JSON.parse(graph.responseText);
   force
     .nodes(graph.nodes)
     .links(graph.links)
@@ -47,14 +51,6 @@ d3.json("miserables.json", function(error, graph) {
         .attr("y1", function(d) { return d.source.y; })
         .attr("x2", function(d) { return d.target.x; })
         .attr("y2", function(d) { return d.target.y; });
-        /*
-        .transition()
-        .duration(100)
-        .attr("r", function(d) { return d.r + 10; })
-        .transition()
-        .duration(100)
-        .attr("r", function(d) { return d.r; });
-        */
 
     node.attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
@@ -71,7 +67,7 @@ d3.json("miserables.json", function(error, graph) {
 
 });
 
-for(var i = 1, time = 5000, fric = 1.0; time >= 0 && fric >= 0; i++, fric-=0.01*i, time -= 500*i){
+for(var i = 1, time = 5000, fric = 1.0; time >= 0 && fric >= 0; i++, fric-=0.01*i, time -= 50*i){
     window.setTimeout(function() {
         force.friction(fric);
     }, time);   
