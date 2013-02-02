@@ -1,0 +1,28 @@
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+text.label {
+  font-family: "Helvetica";
+   fill: CadetBlue;
+   /*
+   text-shadow:
+       1px 1px 0 #FFF,
+       -1px 0px 0 #FFF,
+     -1px -1px 0 #FFF,  
+       1px 0px 0 #FFF,
+      1px -1px 0 #FFF,
+       0px 1px 0 #FFF,
+      -1px 1px 0 #FFF,
+       0px -1px 0 #FFF;
+   */
+  text-shadow:
+      0 0 2px MistyRose;
+  font-size: 50px;
+  pointer-events:none;
+}
