@@ -1,49 +1,48 @@
-var width = 1300,
-    height = 1300;
+$(function ()
+{
+
+var width = parseInt($("#calnotes-viewport").width()) * 2,
+    height = parseInt($("#calnotes-viewport").height()) * 2;
 
 
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
-    .linkDistance(400)
+    .linkDistance(200)
     .linkStrength(1)
-    .charge(-350)
+    .charge(-500)
     .gravity(.05)
     .size([width, height]);
 
-var svg = d3.select("#calnotes-viewport").append("svg")
-    .attr("viewBox", "0 0 " + d3.select("#calnotes-viewport").width + " " + d3.select("#calnotes-viewport").height)
+var svg = d3.select("div#calnotes-viewport").append("svg")
+    .attr("viewBox", "0 0 " + width + " " + height);
 
-$.ajax({
-      url: "http://www.projectvoid.com/calnotes/api/?cmd=generate_tree";   
-})
-  .done(function(graph) {
-  graph = JSON.parse(graph.responseText);
+$.getJSON("api/?cmd=generate_tree", function(graph) {
   force
     .nodes(graph.nodes)
     .links(graph.links)
     .start();
 
-  var link = svg.selectAll(".link")
+  var link = svg.selectAll(".calnotes-link")
       .data(graph.links)
     .enter().append("line")
-      .attr("class", "link")
+      .attr("class", "calnotes-link")
       .style("stroke-width", function(d) { return Math.sqrt(d.value); });
 
-  var node = svg.selectAll(".node")
+  var node = svg.selectAll(".calnotes-node")
       .data(graph.nodes)
     .enter().append("circle")
-      .attr("class", "node")
-      .attr("cx", function(d, i) { return 20*i; })
-      .attr("cy", function(d, i) { return 20*i; })
-      .attr("r", 35)
+      .attr("class", "calnotes-node")
+      .attr("cx", function(d, i) { return width/2; })
+      .attr("cy", function(d, i) { return height/2; })
+      .attr("r", 30)
       .style("fill", function(d) { return color(d.group); })
       .call(force.drag);
 
-  var label = svg.selectAll(".label")
+  var label = svg.selectAll(".calnotes-label")
       .data(graph.nodes)
       .enter().append("text")
-      .attr("class", "label")
+      .attr("class", "calnotes-label")
       .text(function(d) { return d.name; });
 
   force.on("tick", function() {
@@ -67,8 +66,9 @@ $.ajax({
 
 });
 
-for(var i = 1, time = 5000, fric = 1.0; time >= 0 && fric >= 0; i++, fric-=0.01*i, time -= 50*i){
+for(var i = 1, time = 100000, fric = 1.0; time >= 0 && fric >= 0; i++, fric-=0.0005*i, time -= 25*i){
     window.setTimeout(function() {
         force.friction(fric);
     }, time);   
-} 
+}
+});
