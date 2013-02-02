@@ -3,7 +3,7 @@
 class Note
 {
 	public $id, $college, $field, $nclass, $subject, $difficulty, $tags, $title, $body;
-	function __construct($college_or_fetch, $major = NULL, $nclass = NULL, $difficulty = NULL, $tags = NULL, $title = NULL, $body = NULL)
+	function __construct($college_or_fetch, $major = NULL, $nclass = NULL, $difficulty = NULL, $tags = NULL, $title = NULL, $content = NULL)
 	{
 		if (is_array($college_or_fetch))
 		{
@@ -14,9 +14,9 @@ class Note
 			$this->difficulty = $college_or_fetch["difficulty"];
 			$this->tags = explode(" ", $college_or_fetch["tags"]);
 			$this->title = $college_or_fetch["title"];
-			$this->body = $college_or_fetch["body"];
+			$this->content = $college_or_fetch["content"];
 		}
-		elseif (is_int($college_or_fetch)&&$major!=NULL&&$nclass!=NULL&&$difficulty!=NULL&&$tags!=NULL&&$title!=NULL&&$body!=NULL)
+		elseif (is_int($college_or_fetch)&&$major!=NULL&&$nclass!=NULL&&$difficulty!=NULL&&$tags!=NULL&&$title!=NULL&&$content!=NULL)
 		{
 			$this->college = $college;
 			$this->major = $major;
@@ -25,7 +25,7 @@ class Note
 			$this->difficulty = $difficulty;
 			$this->tags = explode(" ", $tags);
 			$this->title = $title;
-			$this->body = $body;
+			$this->content = $content;
 		}
 		else
 		{
@@ -35,7 +35,7 @@ class Note
 	
 	function toArray()
 	{
-		return array($this->college, $this->major, $this->nclass, $this->difficulty, $this->tags, $this->title, $this->body);
+		return array($this->college, $this->major, $this->nclass, $this->difficulty, $this->tags, $this->title, $this->content);
 	}
 }
 
