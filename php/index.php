@@ -16,8 +16,8 @@ $ret = array();
 switch ($cmd)
 {
 	case "generate_tree":
-		// generate tree logic checks
-		exit;	
+		$ret = Notes::generateTree()->toArray();
+		break;	
 	case "add":
 		$college = $_REQUEST['college'];
 		$major = $_REQUEST['major'];
@@ -37,9 +37,10 @@ switch ($cmd)
 		
 		break;
 	case "get_colleges":
+		$ret["colleges"] = array();
 		$query = "SELECT * FROM colleges";
 		$result = mysql_query($query);
-		while ($array = mysql_fetch_array($result)) $ret[] = array($array["id"], $array["name"]);
+		while ($array = mysql_fetch_array($result)) $ret["colleges"][] = array($array["id"], $array["name"]);
 		$ret['success'] = true;
 		break;
 	case "get_majors":
@@ -60,7 +61,7 @@ switch ($cmd)
 		else $ret['success'] = false;
 		break;
 	case "get_classes":
-	if (isset($_REQUEST['id']))
+		if (isset($_REQUEST['id']))
 		{
 			$query = sprintf("SELECT * FROM majors_classes WHERE major_id='%s'", intval($_REQUEST['id']));
 			$result = mysql_query($query);
@@ -68,10 +69,7 @@ switch ($cmd)
 			{
 				$query2 = sprintf("SELECT * FROM classes WHERE id='%s'", $array['class_id']);
 				$result2 = mysql_query($query2);
-				if ($result2)
-				{
-					while ($array2 = mysql_fetch_array($result2)) $ret[] = array($array2["id"], $array2["name"]);
-				}
+				if ($result2) while ($array2 = mysql_fetch_array($result2)) $ret[] = array($array2["id"], $array2["name"]);
 			}
 		}
 		else $ret['success'] = false;
@@ -80,10 +78,7 @@ switch ($cmd)
 		$query = "SELECT * FROM notes";
 		$result = mysql_query($query);
 		$notes = Notes::queryToArray($result);
-		foreach ($notes as $note)
-		{
-			$ret[] = $note->toArray();
-		}
+		foreach ($notes as $note) $ret[] = $note->toArray();
 		break;
 }
 
