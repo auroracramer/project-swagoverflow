@@ -1,13 +1,4 @@
 <?
-
-//include_once("SessionListTable.php");
-//include_once("ApplicationListTable.php");
-//include_once("ApplicationRegistryTable.php");
-//include_once("PageListTable.php");
-/*
-this class is a collection of static methods used to
-create and destroy the database.
-*/
 class Database
 {
 	static function connect()
