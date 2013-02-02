@@ -40,9 +40,9 @@ class Notes
             
 		if ($result && mysql_num_rows($result) > 0)
 		{
-			$result = array();
-			while ($array = mysql_fetch_array($result)) $result[] = new Note($array);
-			return $result;
+			$ret = array();
+			while ($array = mysql_fetch_array($result)) $ret[] = new Note($array);
+			return $ret;
 		}
 	}
 }

@@ -2,37 +2,40 @@
 
 class Note
 {
-	public $college, $field, $nclass, $subject, $difficulty, $tags, $title, $body;
-	function __construct($college_or_fetch, $major = NULL, $field = NULL, $nclass = NULL, $subject = NULL, $difficulty = NULL, $tags = NULL, $title = NULL, $body = NULL)
+	public $id, $college, $field, $nclass, $subject, $difficulty, $tags, $title, $body;
+	function __construct($college_or_fetch, $major = NULL, $nclass = NULL, $difficulty = NULL, $tags = NULL, $title = NULL, $content = NULL)
 	{
 		if (is_array($college_or_fetch))
 		{
+			$this->id = $college_or_fetch["id"];
 			$this->college = $college_or_fetch["college"];
 			$this->major = $college_or_fetch["major"];
-			$this->field = $college_or_fetch["field"];
 			$this->nclass = $college_or_fetch["class"];
-			$this->subject = $college_or_fetch["subject"];
 			$this->difficulty = $college_or_fetch["difficulty"];
 			$this->tags = explode(" ", $college_or_fetch["tags"]);
 			$this->title = $college_or_fetch["title"];
-			$this->body = $college_or_fetch["body"];
+			$this->content = $college_or_fetch["content"];
 		}
-		elseif (is_string($college_or_fetch)&&$major!=NULL&&$field!=NULL&&$nclass!=NULL&&$subject!=NULL&&$difficulty!=NULL&&$tags!=NULL&&$title!=NULL&&$body!=NULL)
+		elseif (is_int($college_or_fetch)&&$major!=NULL&&$nclass!=NULL&&$difficulty!=NULL&&$tags!=NULL&&$title!=NULL&&$content!=NULL)
 		{
 			$this->college = $college;
 			$this->major = $major;
-			$this->field = $field;
 			$this->nclass = $nclass;
 			$this->subject = $subject;
 			$this->difficulty = $difficulty;
 			$this->tags = explode(" ", $tags);
 			$this->title = $title;
-			$this->body = $body;
+			$this->content = $content;
 		}
 		else
 		{
 			// We've been supplied an incompatible/invalid argument set	
 		}
+	}
+	
+	function toArray()
+	{
+		return array($this->college, $this->major, $this->nclass, $this->difficulty, $this->tags, $this->title, $this->content);
 	}
 }
 
