@@ -13,6 +13,7 @@
 #calnotes-filter-pane
 {
 	position: fixed;
+	z-index: 10;
 	top: 0px;
 	background: #ffc427 url('../img/logo.png') left no-repeat;
 	box-shadow: 0 4px 4px 0px rgba(0,0,0,.2);
@@ -20,6 +21,13 @@
 	border-width: 0px 0px 1px 0px;
 	left: 0px;
 	height: 100px;
+}
+
+#calnotes-viewport
+{
+	position: fixed;
+	bottom: 0px;
+	height: 100%;
 }
 
 .calnotes-difficulty-slider

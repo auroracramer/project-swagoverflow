@@ -2,12 +2,60 @@ $(function ()
 {
 	MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
-	var observer = new MutationObserver(function(mutations, observer) {
+	var observer1 = new MutationObserver(function(mutations, observer) {
 		var cnip = $("#calnotes-info-pane");
-		$("#calnotes-filter-pane").width(window.innerWidth - parseInt(cnip.width()) - parseInt(cnip.css("right")));
+		$("#calnotes-filter-pane, #calnotes-viewport").width(window.innerWidth - parseInt(cnip.width()) - parseInt(cnip.css("right")));
 	});
 	
-	observer.observe(document.getElementById("calnotes-info-pane"), { attributes : true, childList : false, subtree: false });
+	var observer2 = new MutationObserver(function(mutations, observer) {
+		var cnfp = $("#calnotes-filter-pane");
+		$("#calnotes-viewport").height(window.innerHeight - parseInt(cnfp.height()) - parseInt(cnfp.css("top")));
+	});
+	
+	$.getJSON('api/?cmd=get_colleges', function(data) 
+	{
+		var t;
+		if (data['success'])
+		{
+			$("#calnotes-filter-pane-colleges").html("<option value='-1'>Any</option>");
+			for (var i in data['colleges']) $("#calnotes-filter-pane-colleges").append("<option value='"+data["colleges"][i][0]+"'>"+data["colleges"][i][1]+"</option>");
+		}
+	});
+	
+	$("#calnotes-filter-pane-colleges").change(function(e)
+	{
+		if ($(this).val() != "-1")
+		{
+			$.getJSON('api/?cmd=get_majors&id='+$(this).val(), function (data)
+			{
+				$("#calnotes-filter-pane-majors").html("<option value='-1'>Any</option>");
+			for (var i in data) $("#calnotes-filter-pane-majors").append("<option value='"+data[i][0]+"'>"+data[i][1]+"</option>").removeAttr("disabled");
+			});
+		}
+		else
+		{
+			$("#calnotes-filter-pane-majors, #calnotes-filter-pane-classes").attr("disabled", "").html("<option value='-1'>--</option>");
+		}
+	});
+	
+	$("#calnotes-filter-pane-majors").change(function(e)
+	{
+		if ($(this).val() != "-1")
+		{
+			$.getJSON('api/?cmd=get_classes&id='+$(this).val(), function (data)
+			{
+				$("#calnotes-filter-pane-classes").html("<option value='-1'>Any</option>");
+			for (var i in data) $("#calnotes-filter-pane-classes").append("<option value='"+data[i][0]+"'>"+data[i][1]+"</option>").removeAttr("disabled");
+			});
+		}
+		else
+		{
+			$("#calnotes-filter-pane-classes").attr("disabled", "").html("<option value='-1'>--</option>");
+		}
+	});
+	
+	observer1.observe(document.getElementById("calnotes-info-pane"), { attributes : true, childList : false, subtree: false });
+	observer2.observe(document.getElementById("calnotes-filter-pane"), { attributes : true, childList : false, subtree: false });
 	
 	$(".calnotes-difficulty-slider").each(function ()
 	{
@@ -19,8 +67,9 @@ $(function ()
 		}).css("background", bg);
 	});
 	
-	var cnip = $("#calnotes-info-pane");
-	$("#calnotes-filter-pane").width(window.innerWidth - parseInt(cnip.width()));
+	var cnip = $("#calnotes-info-pane"), cnfp = $("#calnotes-filter-pane");
+	$("#calnotes-viewport").height(window.innerHeight - parseInt(cnfp.height()) - parseInt(cnfp.css("top")));
+	$("#calnotes-filter-pane, #calnotes-viewport").width(window.innerWidth - parseInt(cnip.width()) - parseInt(cnip.css("right")));
 	$(".hidepane").click(function ()
 	{
 		var direction = $(this).attr("direction");
@@ -43,6 +92,7 @@ $(function ()
 
 $(window).resize(function ()
 {
-	var cnip = $("#calnotes-info-pane");
-	$("#calnotes-filter-pane").width(window.innerWidth - parseInt(cnip.width()));
+	var cnip = $("#calnotes-info-pane"), cnfp = $("#calnotes-filter-pane");
+	$("#calnotes-viewport").height(window.innerHeight - parseInt(cnfp.height()) - parseInt(cnfp.css("top")));
+	$("#calnotes-filter-pane, #calnotes-viewport").width(window.innerWidth - parseInt(cnip.width()) - parseInt(cnip.css("right")));
 });

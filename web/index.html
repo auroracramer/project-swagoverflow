@@ -23,25 +23,22 @@
                 <div style="display: inline-block; vertical-align: top; margin-right: 20px;">
                     <div>
                         <div style="display: inline-block; width: 70px; font-size: 20px; font-weight: bold;">College</div>
-                        <select style="width: 100px;">
-                            <option>Any</option>
-                            <option>Engineering</option>
+                        <select id="calnotes-filter-pane-colleges" style="width: 100px;">
+                        	<option>--</option>
                         </select>
                     </div>
                     <div>
                         <div style="display: inline-block; width: 70px; font-size: 20px; font-weight: bold;">Major</div>
-                        <select style="width: 100px;">
-                            <option>Any</option>
-                            <option>EECS</option>
+                        <select disabled id="calnotes-filter-pane-majors" style="width: 100px;">
+                            <option>--</option>
                         </select>
                     </div>
                 </div>
                 <div style="display: inline-block; vertical-align: top; margin-right: 20px;">
                     <div>
                         <div style="display: inline-block; width: 92px; font-size: 20px; font-weight: bold;">Class</div>
-                        <select style="width: 112px;">
-                            <option>Any</option>
-                            <option>EE20</option>
+                        <select disabled id="calnotes-filter-pane-classes" style="width: 112px;">
+                            <option>--</option>
                         </select>
                     </div>
                     <div style="padding-top: 5px;">
@@ -58,6 +55,7 @@
             </div>
         </div>
     </div>
+    <div id="calnotes-viewport"></div>
     <div id="calnotes-info-pane"><button direction="right" class="btn hidepane">-</button></div>
 </body>
 </html>
