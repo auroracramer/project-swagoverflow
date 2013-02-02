@@ -1,9 +1,9 @@
 <?
 
-include_once("SessionListTable.php");
-include_once("ApplicationListTable.php");
-include_once("ApplicationRegistryTable.php");
-include_once("PageListTable.php");
+//include_once("SessionListTable.php");
+//include_once("ApplicationListTable.php");
+//include_once("ApplicationRegistryTable.php");
+//include_once("PageListTable.php");
 /*
 this class is a collection of static methods used to
 create and destroy the database.
@@ -31,51 +31,6 @@ class Database
 		}
 		
 		return false;
-	}
-	
-	static function destroy()
-	{
-		ApplicationListTable::destroy();
-		ApplicationRegistryTable::destroy();
-		//UserTableListTable::destroy();
-		SessionListTable::destroy();
-		PageListTable::destroy();
-	}
-	
-	static function create()
-	{
-		ApplicationListTable::create();
-		ApplicationRegistryTable::create();
-		//UserTableListTable::create();
-		SessionListTable::create();
-		PageListTable::create();
-	}
-	
-	static function init()
-	{
-		ApplicationListTable::init();
-		ApplicationRegistryTable::init();
-		//UserTableListTable::init();
-		SessionListTable::init();
-		PageListTable::init();
-	}
-	
-	static function clear()
-	{
-		ApplicationListTable::clear();
-		ApplicationRegistryTable::clear();
-		//UserTableListTable::clear();
-		SessionListTable::clear();
-		PageListTable::init();
-	}
-	
-	static function printContents()
-	{
-		ApplicationListTable::printContents();
-		ApplicationRegistryTable::printContents();
-		//UserTableListTable::printContents();
-		SessionListTable::printContents();
-		PageListTable::printContents();
 	}
 }
 
