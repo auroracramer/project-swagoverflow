@@ -12,8 +12,8 @@ class Database
 {
 	static function connect()
 	{
-		$mysql_connection = mysql_connect("localhost", "proje108_registr", "UpR]FS(gbuhB");
-		$connected =  mysql_select_db("proje108_registry", $mysql_connection);
+		$mysql_connection = mysql_connect("localhost", "proje108_quiggle", "quiggle");
+		$connected =  mysql_select_db("proje108_quiggle", $mysql_connection);
 		
 		if(!$connected) echo "Connection Fail: ".mysql_error()."<br />";
 		else Debug::write("Successfully connected to database");
@@ -23,7 +23,7 @@ class Database
 	
 	static function mysql_table_exists($tableName)
 	{
-		$tables = mysql_list_tables("proje108_registry");
+		$tables = mysql_list_tables("proje108_quiggle");
 		$numRows = mysql_num_rows($tables);
 		for ($i = 0; $i < $numRows; $i++)
 		{
