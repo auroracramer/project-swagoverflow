@@ -12,10 +12,10 @@ var force = d3.layout.force()
     .size([width, height]);
 
 var svg = d3.select("#calnotes-viewport").append("svg")
-    .attr("viewBox", "0 0 " + width + " " + height)
+    .attr("viewBox", "0 0 " + d3.select("#calnotes-viewport").width + " " + d3.select("#calnotes-viewport").height)
 
 $.ajax({
-      url: "www.projectivevoid.com/calnotes/api/?cmd=generate_tree";   
+      url: "http://www.projectvoid.com/calnotes/api/?cmd=generate_tree";   
 })
   .done(function(graph) {
   graph = JSON.parse(graph.responseText);
