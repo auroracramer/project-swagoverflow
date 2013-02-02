@@ -13,6 +13,7 @@
 #calnotes-filter-pane
 {
 	position: fixed;
+	top: 0px;
 	background: #ffc427 url('../img/logo.png') left no-repeat;
 	box-shadow: 0 4px 4px 0px rgba(0,0,0,.2);
 	border-style: solid;
@@ -25,5 +26,36 @@
 {
 	display: inline-block;
 	background: -webkit-linear-gradient(right , rgb(230,51,51) 22%, rgb(238,245,24) 50%, rgb(47,237,60) 87%);
-	width: 100px;
+	width: 92px;
+}
+
+#calnotes-info-pane .hidepane
+{
+	display: block;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: -31px;
+	top: 50%;
+	margin-top: -15px;
+	background-color: #909090;
+	color: #000;
+	font-weight: bold;
+	font-size: 24px;
+	padding: 0px;
+}
+
+#calnotes-filter-pane .hidepane
+{
+	display: block;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	bottom: 0;
+	margin-bottom: -30px;
+	background-color: #909090;
+	color: #000;
+	font-weight: bold;
+	font-size: 24px;
+	padding: 0px;
 }

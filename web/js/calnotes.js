@@ -24,7 +24,13 @@ $(function ()
 	$(".hidepane").click(function ()
 	{
 		var direction = $(this).attr("direction");
-		if (direction == "up") $(this).parent().slideUp(500);
+		if (direction == "up")
+		{
+			var $lefty = $(this).parent();
+			$lefty.animate({
+		  		top: parseInt($lefty.css('top'), 10) == 0 ? -$lefty.height() - 4 : 0
+   			}, 500);
+		}
 		else if (direction == "right")
 		{
 			var $lefty = $(this).parent();
