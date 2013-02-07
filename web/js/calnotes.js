@@ -4,12 +4,12 @@ $(function ()
 
 	var observer1 = new MutationObserver(function(mutations, observer) {
 		var cnip = $("#calnotes-info-pane");
-		$("#calnotes-filter-pane, #calnotes-viewport").width(window.innerWidth - parseInt(cnip.width()) - parseInt(cnip.css("right")));
+		$("#calnotes-filter-pane, #calnotes-viewport").width(window.innerWidth - parseInt(cnip.innerWidth()) - parseInt(cnip.css("right")));
 	});
 	
 	var observer2 = new MutationObserver(function(mutations, observer) {
 		var cnfp = $("#calnotes-filter-pane");
-		$("#calnotes-viewport").height(window.innerHeight - parseInt(cnfp.height()) - parseInt(cnfp.css("top")));
+		$("#calnotes-viewport").height(window.innerHeight - parseInt(cnfp.innerHeight()) - parseInt(cnfp.css("top")));
 	});
 	
 	$.getJSON('api/?cmd=get_colleges', function(data) 
@@ -68,8 +68,8 @@ $(function ()
 	});
 	
 	var cnip = $("#calnotes-info-pane"), cnfp = $("#calnotes-filter-pane");
-	$("#calnotes-viewport").height(window.innerHeight - parseInt(cnfp.height()) - parseInt(cnfp.css("top")));
-	$("#calnotes-filter-pane, #calnotes-viewport").width(window.innerWidth - parseInt(cnip.width()) - parseInt(cnip.css("right")));
+	$("#calnotes-viewport").height(window.innerHeight - parseInt(cnfp.innerHeight()) - parseInt(cnfp.css("top")));
+	$("#calnotes-filter-pane, #calnotes-viewport").width(window.innerWidth - parseInt(cnip.innerWidth()) - parseInt(cnip.css("right")));
 	$(".hidepane").click(function ()
 	{
 		var direction = $(this).attr("direction");
@@ -77,14 +77,14 @@ $(function ()
 		{
 			var $lefty = $(this).parent();
 			$lefty.animate({
-		  		top: parseInt($lefty.css('top'), 10) == 0 ? -$lefty.height() - 4 : 0
+		  		top: parseInt($lefty.css('top'), 10) == 0 ? -$lefty.innerHeight() - 4 : 0
    			}, 500);
 		}
 		else if (direction == "right")
 		{
 			var $lefty = $(this).parent();
 			$lefty.animate({
-		  		right: parseInt($lefty.css('right'), 10) == 0 ? -$lefty.width() - 4 : 0
+		  		right: parseInt($lefty.css('right'), 10) == 0 ? -$lefty.innerWidth() - 4 : 0
    			}, 500);
 		}
 	});
@@ -94,5 +94,5 @@ $(window).resize(function ()
 {
 	var cnip = $("#calnotes-info-pane"), cnfp = $("#calnotes-filter-pane");
 	$("#calnotes-viewport").height(window.innerHeight - parseInt(cnfp.height()) - parseInt(cnfp.css("top")));
-	$("#calnotes-filter-pane, #calnotes-viewport").width(window.innerWidth - parseInt(cnip.width()) - parseInt(cnip.css("right")));
+	$("#calnotes-filter-pane, #calnotes-viewport").width(window.innerWidth - parseInt(cnip.innerWidth()) - parseInt(cnip.css("right")));
 });

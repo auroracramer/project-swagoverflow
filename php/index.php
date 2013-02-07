@@ -3,9 +3,12 @@ header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
 header('Content-type: application/json');
 
+include_once("simple_html_dom.php");
 include_once("class/Database.class.php");
 include_once("class/Note.class.php");
 include_once("class/Notes.class.php");
+include_once("class/Node.class.php");
+include_once("class/NodeType.class.php");
 
 // Connect to our SQL Database
 Database::connect();
@@ -44,7 +47,7 @@ switch ($cmd)
 		$ret['success'] = true;
 		break;
 	case "get_majors":
-		if (isset($_REQUEST['id']))
+		if (is_int($_REQUEST['id']))
 		{
 			$query = sprintf("SELECT * FROM colleges_majors WHERE college_id='%s'", intval($_REQUEST['id']));
 			$result = mysql_query($query);
@@ -61,7 +64,7 @@ switch ($cmd)
 		else $ret['success'] = false;
 		break;
 	case "get_classes":
-		if (isset($_REQUEST['id']))
+		if (is_int($_REQUEST['id']))
 		{
 			$query = sprintf("SELECT * FROM majors_classes WHERE major_id='%s'", intval($_REQUEST['id']));
 			$result = mysql_query($query);
@@ -73,6 +76,25 @@ switch ($cmd)
 			}
 		}
 		else $ret['success'] = false;
+		break;
+	case "build_tables":
+		$node = Node::fromXML("xml/berkeley.xml");
+		var_dump($node);
+		/*
+		$html = file_get_html("http://ls.berkeley.edu/l-s-departments");
+		foreach($html->find("#node-219 ul a") as $element)
+		{
+			$html = file_get_contents(sprintf("https://apis-dev.berkeley.edu/cxf/asws/department?departmentName=%s&_type=json&app_id=%s&app_key=%s", urlencode($element->plaintext), "74b1e753", "637e1fa1b74a3afeb0bb544935c66c4e"));
+			$data = json_decode($html, true);
+			$departments = array();
+			$c_departments = $data["CanonicalDepartment"];
+			if (sizeof($c_departments[0]) != 0)
+				foreach ($c_departments as $c_department)
+					if (!array_key_exists($c_department["departmentCode"], $departments))
+						$departments[$c_department["departmentCode"]] = $c_department["departmentName"];
+			foreach ($departments as $key => $value) echo sprintf("<Node>\n 	<Id>%s</Id>\n	<Name>%s</Name>\n	<Type>2</Type>\n	<Children></Children>\n</Node>\n", $key, $value);
+		}*/
+		
 		break;
 	default:
 		$query = "SELECT * FROM notes";

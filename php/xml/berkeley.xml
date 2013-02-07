@@ -1,0 +1,142 @@
+<node id="UCBAL" name="University of California Berkeley" type=0>
+	<node id="COLLS" name="College of Letters and Sciences" type=1>
+		<node id="AFRICAM" name="African American Studies" type=2></node>
+		<node id="AFRICAM" name="African American Studies" type=2></node>
+		<node id="AFRO-AM" name="Afro-American Studies" type=2></node>
+		<node id="AMERSTD" name="American Studies" type=2></node>
+		<node id="ASAMST" name="Asian American Studies" type=2></node>
+		<node id="LATAMST" name="Latin American Studies" type=2></node>
+		<node id="NATAMST" name="Native American Studies" type=2></node>
+		<node id="ANTHRO" name="Anthropology" type=2></node>
+		<node id="MEDANTH" name="Medical Anthropology" type=2></node>
+		<node id="APPMATH" name="Applied Mathematics" type=2></node>
+		<node id="ARABIC" name="Arabic" type=2></node>
+		<node id="ASAMST" name="Asian American Studies" type=2></node>
+		<node id="ASIANST" name="Asian Studies" type=2></node>
+		<node id="EURA ST" name="Eurasian Studies" type=2></node>
+		<node id="S,SEASN" name="South and Southeast Asian Studies" type=2></node>
+		<node id="ASTRON" name="Astronomy" type=2></node>
+		<node id="BIO&ENV" name="Biology and Environmental Science" type=2></node>
+		<node id="BIOLOGY" name="Biology" type=2></node>
+		<node id="INTEGBI" name="Integrative Biology" type=2></node>
+		<node id="MCELLBI" name="Molecular and Cell Biology" type=2></node>
+		<node id="MICROB" name="Microbiology" type=2></node>
+		<node id="MOLBIOL" name="Molecular Biology" type=2></node>
+		<node id="MPLANTB" name="Molecular Plant Biology" type=2></node>
+		<node id="NEURBIO" name="Neurobiology" type=2></node>
+		<node id="PLANTBI" name="Plant and Microbial Biology" type=2></node>
+		<node id="PLSOBIO" name="Plant and Soil Biology" type=2></node>
+		<node id="BIOSTAT" name="Biostatistics" type=2></node>
+		<node id="BUDD ST" name="Buddhist Studies" type=2></node>
+		<node id="BUDDSTD" name="Group in Buddhist Studies" type=2></node>
+		<node id="CELTIC" name="Celtic Studies" type=2></node>
+		<node id="AGR CHM" name="Agricultural and Environ Chemistry" type=2></node>
+		<node id="BIOCHEM" name="Biochemistry" type=2></node>
+		<node id="C,BIOCH" name="Comparative Biochemistry" type=2></node>
+		<node id="CHEM" name="Chemistry" type=2></node>
+		<node id="COMPBIO" name="Comparative Biochemistry" type=2></node>
+		<node id="CHICANO" name="Chicano Studies" type=2></node>
+		<node id="CHINESE" name="Chinese" type=2></node>
+		<node id="CLASSIC" name="Classics" type=2></node>
+		<node id="CL ARCH" name="Classical Archaeology" type=2></node>
+		<node id="COG SCI" name="Cognitive Science" type=2></node>
+		<node id="COLWRIT" name="College Writing Program" type=2></node>
+		<node id="COM LIT" name="Comparative Literature" type=2></node>
+		<node id="COMPSCI" name="Computer Science" type=2></node>
+		<node id="THEATER" name="Theater, Dance, and Performance St" type=2></node>
+		<node id="DEMOG" name="Demography" type=2></node>
+		<node id="DEV STD" name="Development Studies" type=2></node>
+		<node id="DRM ART" name="Dramatic Art" type=2></node>
+		<node id="EPS" name="Earth and Planetary Science" type=2></node>
+		<node id="EA LANG" name="East Asian Languages and Cultures" type=2></node>
+		<node id="A,RESEC" name="Agricultural and Resource Economics" type=2></node>
+		<node id="ECON" name="Economics" type=2></node>
+		<node id="ENVECON" name="Environmental Economics and Policy" type=2></node>
+		<node id="ENGLISH" name="English" type=2></node>
+		<node id="ENGSECL" name="English as a Second Language" type=2></node>
+		<node id="ENV SCI" name="Environmental Sciences" type=2></node>
+		<node id="ETH GRP" name="Ethnic Studies Graduate Group" type=2></node>
+		<node id="ETH STD" name="Ethnic Studies" type=2></node>
+		<node id="FOLKLOR" name="Folklore" type=2></node>
+		<node id="GENETIC" name="Genetics" type=2></node>
+		<node id="GEOG" name="Geography" type=2></node>
+		<node id="GEOLOGY" name="Geology" type=2></node>
+		<node id="GEOLPHY" name="Geology and Geophysics" type=2></node>
+		<node id="GEOLPHY" name="Geology and Geophysics" type=2></node>
+		<node id="GEOPHYS" name="Geophysics" type=2></node>
+		<node id="GERMAN" name="German" type=2></node>
+		<node id="GREEK" name="Greek" type=2></node>
+		<node id="HEBREW" name="Hebrew" type=2></node>
+		<node id="AHMA" name="Ancient History and Med. Arch." type=2></node>
+		<node id="HISTART" name="History of Art" type=2></node>
+		<node id="HISTORY" name="History" type=2></node>
+		<node id="HISTART" name="History of Art" type=2></node>
+		<node id="HUMAN" name="Humanities" type=2></node>
+		<node id="IMMUN" name="Immunology" type=2></node>
+		<node id="IMMUNPH" name="Immunology-PH" type=2></node>
+		<node id="INTEGBI" name="Integrative Biology" type=2></node>
+		<node id="ITALIAN" name="Italian Studies" type=2></node>
+		<node id="JAPAN" name="Japanese" type=2></node>
+		<node id="JEWISH" name="Jewish Studies" type=2></node>
+		<node id="KOREAN" name="Korean" type=2></node>
+		<node id="LATAMST" name="Latin American Studies" type=2></node>
+		<node id="LATIN" name="Latin" type=2></node>
+		<node id="LATAMST" name="Latin American Studies" type=2></node>
+		<node id="LINGUIS" name="Linguistics" type=2></node>
+		<node id="LOGICMS" name="LOGIC AND METHODOLOGY OF SCIENCE" type=2></node>
+		<node id="APPMATH" name="Applied Mathematics" type=2></node>
+		<node id="MATH" name="Mathematics" type=2></node>
+		<node id="SCMATHE" name="Science and Mathematics Education" type=2></node>
+		<node id="MEDANTH" name="Medical Anthropology" type=2></node>
+		<node id="MEDIAST" name="Media Studies" type=2></node>
+		<node id="MED ST" name="Medieval Studies" type=2></node>
+		<node id="M E STU" name="Middle Eastern Studies" type=2></node>
+		<node id="MIL SCI" name="Military Science" type=2></node>
+		<node id="MUSIC" name="Music" type=2></node>
+		<node id="NATAMST" name="Native American Studies" type=2></node>
+		<node id="NAV SCI" name="Naval Science" type=2></node>
+		<node id="NE STUD" name="Near Eastern Studies" type=2></node>
+		<node id="NEURBIO" name="Neurobiology" type=2></node>
+		<node id="PERSIAN" name="Persian" type=2></node>
+		<node id="PHILOS" name="Philosophy" type=2></node>
+		<node id="BIOPHY" name="Biophysics" type=2></node>
+		<node id="BIOPHYS" name="Biophysics" type=2></node>
+		<node id="GEOLPHY" name="Geology and Geophysics" type=2></node>
+		<node id="GEOPHYS" name="Geophysics" type=2></node>
+		<node id="PHYSICS" name="Physics" type=2></node>
+		<node id="EDPSYCH" name="Educational Psychology" type=2></node>
+		<node id="PSYCH" name="Psychology" type=2></node>
+		<node id="PB HLTH" name="Public Health" type=2></node>
+		<node id="RELIGST" name="Religious Studies" type=2></node>
+		<node id="RHETOR" name="Rhetoric" type=2></node>
+		<node id="SCANDIN" name="Scandinavian" type=2></node>
+		<node id="SLAVIC" name="Slavic Languages and Literatures" type=2></node>
+		<node id="SOC SCI" name="Social Sciences" type=2></node>
+		<node id="SOC WEL" name="Social Welfare" type=2></node>
+		<node id="SOCIOL" name="Sociology" type=2></node>
+		<node id="S ASIAN" name="South Asian" type=2></node>
+		<node id="S,SEASN" name="South and Southeast Asian Studies" type=2></node>
+		<node id="BIOSTAT" name="Biostatistics" type=2></node>
+		<node id="STAT" name="Statistics" type=2></node>
+		<node id="TURKISH" name="Turkish" type=2></node>
+	</node>
+	<node id="HAAS3" name="Haas School of Business" type=1>
+		<node id="MBA" name="Masters in Business Administration" type=2></node>
+		<node id="PHDBA" name="Ph.D. in Business Administration" type=2></node>
+		<node id="UGBA" name="Undergraduate Business Administration" type=2></node>
+	</node>
+	<node id="COCHM" name="College of Chemistry" type=1></node>
+	<node id="COENG" name="College of Engineering" type=1>
+		<node id="BIO ENG" name="Bioengineering" type=2></node>
+		<node id="CIV ENG" name="Civil and Environmental Engineering" type=2></node>
+		<node id="BEL ENG" name="Electrical Engineering" type=2></node>
+		<node id="IND ENG" name="Industrial Engineering" type=2></node>
+		<node id="MAT SCI" name="Materials Science and Engineering" type=2></node>
+		<node id="MEC ENG" name="Mechanical Engineering" type=2></node>
+		<node id="NUC ENG" name="Nuclear Engineering" type=2></node>	
+	</node>
+	<node id="CENVD" name="College of Environmental Design" type=1></node>
+	<node id="BOALT" name="Boalt School of Law" type=1></node>
+	<node id="CO1NR" name="College of Natural Resources" type=1></node>
+	<node id="SC1OP" name="School of Optometry" type=1></node>
+</node>
